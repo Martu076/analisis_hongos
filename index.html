@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Puedo comer este hongo?</title>
+    <link rel="stylesheet" href="CSS/csshongos.css"> <!-- Enlace al archivo CSS -->
+    <link rel="icon" type="image/png" href="https://images.vexels.com/media/users/3/182748/isolated/preview/e1d5f35cac9c6bdfeccac4b4a1250c99-planta-de-hongos-plana.png">
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <a href="https://datamar.site/" target="_blank">
+                <img src="https://i.ibb.co/cSxL5mdm/DataMar.png" alt="Logo" class="centered-image">
+            </a>
+        </div>
+        <h1>¿Puedo comer este hongo?</h1>
+        <p class="project-description">
+            Este formulario te permite determinar si un hongo es venenoso o no, utilizando un modelo predictivo entrenado en Python. 
+            El modelo se basa en características físicas del hongo, como la forma, superficie y color de su sombrero, 
+            para hacer una predicción sobre su peligrosidad.
+        </p>
+        <form id="hongoForm">
+        <!-- Forma del sombrero -->
+            <label class="tooltip" for="forma-del-sombrero">
+                Forma del sombrero
+                <span class="tooltiptext">
+                    Hace referencia a la apariencia o estructura del sombrero, que es la parte superior del hongo.
+                    <img src="https://via.placeholder.com/50" alt="Forma del sombrero">
+                </span>
+            </label>
+            <select id="forma-del-sombrero" name="forma-del-sombrero">
+                <option value="Campana">Campana</option>
+                <option value="Conica">Cónica</option>
+                <option value="Convexa">Convexa</option>
+                <option value="Plana">Plana</option>
+                <option value="Abultada">Abultada</option>
+                <option value="Hundida">Hundida</option>
+            </select>
+
+        <!-- Superficie del sombrero -->
+            <label class="tooltip" for="superficie-del-sombrero">
+                Superficie del sombrero
+                <span class="tooltiptext">
+                    Diferentes tipos de superficies del sombrero de los hongos.
+                    <img src="https://via.placeholder.com/50" alt="Superficie del sombrero">
+                </span>
+            </label>
+            <select id="superficie-del-sombrero" name="superficie-del-sombrero">
+                <option value="Fibrosa">Fibrosa</option>
+                <option value="Con surcos">Con surcos</option>
+                <option value="Escamosa">Escamosa</option>
+                <option value="Lisa">Lisa</option>
+            </select>
+
+        <!-- Color del sombrero -->
+            <label class="tooltip" for="color-del-sombrero">
+                Color del sombrero
+                <span class="tooltiptext">
+                    El color del sombrero ayuda a identificar el hongo.
+                    <img src="https://via.placeholder.com/50" alt="Color del sombrero">
+                </span>
+            </label>
+            <select id="color-del-sombrero" name="color-del-sombrero">
+                <option value="Marron">Marrón</option>
+                <option value="Amarillo claro">Amarillo claro</option>
+                <option value="Canela">Canela</option>
+                <option value="Gris">Gris</option>
+                <option value="Verde">Verde</option>
+                <option value="Rosa">Rosa</option>
+                <option value="Morado">Morado</option>
+                <option value="Rojo">Rojo</option>
+                <option value="Blanco">Blanco</option>
+                <option value="Amarillo">Amarillo</option>
+            </select>
+
+        <!-- Lastimaduras -->
+            <label class="tooltip" for="lastimaduras">
+                Lastimaduras
+                <span class="tooltiptext">
+                    El color del sombrero ayuda a identificar el hongo.
+                    <img src="https://via.placeholder.com/50" alt="Lastimaduras">
+                </span>
+            </label>
+            <select id="lastimaduras" name="lastimaduras">
+                <option value="Si">Si</option>
+                <option value="No">No</option>
+            </select>
+
+        <!-- Olor del hongo -->
+            <label class="tooltip" for="olor">
+                Olor del hongo
+                <span class="tooltiptext">
+                    El color del sombrero ayuda a identificar el hongo.
+                    <img src="https://via.placeholder.com/50" alt="Olor del sombrero">
+                </span>
+            </label>
+            <select id="olor" name="olor">
+                <option value="Almendra">Almendra</option>
+                <option value="Anis">Anis</option>
+                <option value="Cresol">Cresol</option>
+                <option value="Pescado">Pescado</option>
+                <option value="Fetido">Fetido</option>
+                <option value="Mofeta">Mofeta</option>
+                <option value="Pungente">Pungente</option>
+                <option value="Especiado">Especiado</option>
+                <option value="Ninguno">Ninguno</option>
+            </select>
+
+        <!-- Unión de las láminas -->
+            <label class="tooltip" for="union-laminas">
+                Unión de las láminas
+                <span class="tooltiptext">
+                    El color del sombrero ayuda a identificar el hongo.
+                    <img src="https://via.placeholder.com/50" alt="Unión de las láminas">
+                </span>
+            </label>
+            <select id="union-laminas" name="union-laminas">
+                <option value="Unidas">Unida</option>
+                <option value="Libres">Libre</option>
+            </select>
+        
+        
+        <!-- Separación de las láminas -->
+        <label class="tooltip" for="separacion-laminas">
+            Separación de las láminas
+            <span class="tooltiptext">
+                El color del sombrero ayuda a identificar el hongo.
+                <img src="https://via.placeholder.com/50" alt="Separación de las láminas">
+            </span>
+        </label>
+        <select id="separacion-laminas" name="separacion-laminas">
+            <option value="Cercanas">Cercanas</option>
+            <option value="Aglomeradas">Aglomeradas</option>
+        </select>
+
+
+        <!-- Tamaño de las láminas -->
+        <label class="tooltip" for="tamano-laminas">
+            Tamaño de las láminas
+            <span class="tooltiptext">
+                El tamaño de las láminas ayuda a identificar el hongo.
+                <img src="https://via.placeholder.com/50" alt="Tamaño de las láminas">
+            </span>
+        </label>
+        <select id="tamano-laminas" name="tamano-laminas">
+            <option value="Anchas">Anchas</option>
+            <option value="Estrechas">Estrechas</option>
+        </select>
+
+
+        <!-- Color de las láminas -->
+        <label class="tooltip" for="color-laminas">
+            Color de las láminas
+            <span class="tooltiptext">
+                El color de las láminas ayuda a identificar el hongo.
+                <img src="https://via.placeholder.com/50" alt="Color de las láminas">
+            </span>
+        </label>
+        <select id="color-laminas" name="color-laminas">
+            <option value="Negro">Negro</option>
+            <option value="Marron">Marrón</option>
+            <option value="Amarillo claro">Amarillo claro</option>
+            <option value="Chocolate">Chocolate</option>
+            <option value="Gris">Gris</option>
+            <option value="Verde">Verde</option>
+            <option value="Naranja">Naranja</option>
+            <option value="Rosa">Rosa</option>
+            <option value="Morado">Morado</option>
+            <option value="Rojo">Rojo</option>
+            <option value="Blanco">Blanco</option>
+            <option value="Amarillo">Amarillo</option>
+        </select>
+
+        <!-- Forma del tallo -->
+        <label class="tooltip" for="forma-tallo">
+            Forma del tallo
+            <span class="tooltiptext">
+                La forma del tallo ayuda a identificar el hongo.
+                <img src="https://via.placeholder.com/50" alt="Forma del tallo">
+            </span>
+        </label>
+        <select id="forma-tallo" name="forma-tallo">
+            <option value="Agrandado">Agrandado</option>
+            <option value="Enflaquecido">Enflaquecido</option>
+        </select>
+
+        <!-- Raíz del tallo -->
+        <label class="tooltip" for="raiz-tallo">
+            Raíz del tallo
+            <span class="tooltiptext">
+                La raíz del tallo ayuda a identificar el hongo.
+                <img src="https://via.placeholder.com/50" alt="Raíz del tallo">
+            </span>
+        </label>
+        <select id="raiz-tallo" name="raiz-tallo">
+            <option value="Bulbosa">Bulbosa</option>
+            <option value="Clava">Clava</option>
+            <option value="Igual">Igual</option>
+            <option value="Con raiz">Con raíz</option>
+            <option value="Desaparecida">Desaparecida</option>
+        </select>
+
+        <!-- Superficie del tallo (arriba del anillo) -->
+        <label class="tooltip" for="superficie-tallo-arriba-del-anillo">
+            Superficie del tallo (arriba del anillo)
+            <span class="tooltiptext">
+                La superficie del tallo ayuda a identificar el hongo.
+                <img src="https://via.placeholder.com/50" alt="Superficie del tallo">
+            </span>
+        </label>
+        <select id="superficie-tallo-arriba-del-anillo" name="superficie-tallo-arriba-del-anillo">
+            <option value="Fibrosa">Fibrosa</option>
+            <option value="Escamosa">Escamosa</option>
+            <option value="Sedosa">Sedosa</option>
+            <option value="Lisa">Lisa</option>
+        </select>
+
+        <!-- Superficie del tallo (debajo del anillo) -->
+        <label class="tooltip" for="superficie-tallo-debajo-del-anillo">
+            Superficie del tallo (debajo del anillo)
+            <span class="tooltiptext">
+                La superficie del tallo ayuda a identificar el hongo.
+                <img src="https://via.placeholder.com/50" alt="Superficie del tallo">
+            </span>
+        </label>
+        <select id="superficie-tallo-debajo-del-anillo" name="superficie-tallo-debajo-del-anillo">
+            <option value="Fibrosa">Fibrosa</option>
+            <option value="Escamosa">Escamosa</option>
+            <option value="Sedosa">Sedosa</option>
+            <option value="Lisa">Lisa</option>
+        </select>
+
+        <!-- Color del tallo (arriba del anillo) -->
+        <label class="tooltip" for="color-tallo-arriba-del-anillo">
+            Color del tallo (arriba del anillo)
+            <span class="tooltiptext">
+                El color del tallo ayuda a identificar el hongo.
+                <img src="https://via.placeholder.com/50" alt="Color del tallo">
+            </span>
+        </label>
+        <select id="color-tallo-arriba-del-anillo" name="color-tallo-arriba-del-anillo">
+            <option value="Marron">Marrón</option>
+            <option value="Amarillo claro">Amarillo claro</option>
+            <option value="Canela">Canela</option>
+            <option value="Gris">Gris</option>
+            <option value="Naranja">Naranja</option>
+            <option value="Rosa">Rosa</option>
+            <option value="Rojo">Rojo</option>
+            <option value="Blanco">Blanco</option>
+            <option value="Amarillo">Amarillo</option>
+        </select>
+
+        <!-- Color del tallo (debajo del anillo) -->
+        <label class="tooltip" for="color-tallo-debajo-del-anillo">
+            Color del tallo (debajo del anillo)
+            <span class="tooltiptext">
+                El color del tallo ayuda a identificar el hongo.
+                <img src="https://via.placeholder.com/50" alt="Color del tallo">
+            </span>
+        </label>
+        <select id="color-tallo-debajo-del-anillo" name="color-tallo-debajo-del-anillo">
+            <option value="Marron">Marrón</option>
+            <option value="Amarillo claro">Amarillo claro</option>
+            <option value="Canela">Canela</option>
+            <option value="Gris">Gris</option>
+            <option value="Naranja">Naranja</option>
+            <option value="Rosa">Rosa</option>
+            <option value="Rojo">Rojo</option>
+            <option value="Blanco">Blanco</option>
+            <option value="Amarillo">Amarillo</option>
+        </select>
+
+
+        <!-- Tipo de velo -->
+        <label class="tooltip" for="tipo-de-velo">
+            Tipo de velo
+            <span class="tooltiptext">
+                El tipo de velo ayuda a identificar el hongo.
+                <img src="https://via.placeholder.com/50" alt="Tipo de velo">
+            </span>
+        </label>
+        <select id="tipo-de-velo" name="tipo-de-velo">
+            <option value="Parcial">Parcial</option>
+            <option value="Universal">Universal</option>
+        </select>
+
+
+        <!-- Color del velo -->
+        <label class="tooltip" for="color-del-velo">
+            Color del velo
+            <span class="tooltiptext">
+                El color del velo ayuda a identificar el hongo.
+                <img src="https://via.placeholder.com/50" alt="Color del velo">
+            </span>
+        </label>
+        <select id="color-del-velo" name="color-del-velo">
+            <option value="Marron">Marrón</option>
+            <option value="Naranja">Naranja</option>
+            <option value="Blanco">Blanco</option>
+            <option value="Amarillo">Amarillo</option>
+        </select>
+
+        <!-- Número de anillos -->
+        <label class="tooltip" for="numero-de-anillos">
+            Número de anillos
+            <span class="tooltiptext">
+                El número de anillos ayuda a identificar el hongo.
+                <img src="https://via.placeholder.com/50" alt="Número de anillos">
+            </span>
+        </label>
+        <select id="numero-de-anillos" name="numero-de-anillos">
+            <option value="Ninguno">Ninguno</option>
+            <option value="Uno">Uno</option>
+            <option value="Dos">Dos</option>
+        </select>
+
+        <!-- Tipo de anillos -->
+        <label class="tooltip" for="tipo-de-anillos">
+            Tipo de anillos
+            <span class="tooltiptext">
+                El tipo de anillos ayuda a identificar el hongo.
+                <img src="https://via.placeholder.com/50" alt="Tipo de anillos">
+            </span>
+        </label>
+        <select id="tipo-de-anillos" name="tipo-de-anillos">
+            <option value="Evanescente">Evanescente</option>
+            <option value="En expansion">En expansión</option>
+            <option value="Grande">Grande</option>
+            <option value="Ninguno">Ninguno</option>
+            <option value="Colgante">Colgante</option>
+        </select>
+
+        <!-- Color de la impresión de esporas -->
+        <label class="tooltip" for="color-impresión-de-esporas">
+            Color de la impresión de esporas
+            <span class="tooltiptext">
+                El color de la impresión de esporas ayuda a identificar el hongo.
+                <img src="https://via.placeholder.com/50" alt="Color de la impresión de esporas">
+            </span>
+        </label>
+        <select id="color-impresion-de-esporas" name="color-impresion-de-esporas">
+            <option value="Negro">Negro</option>
+            <option value="Marron">Marrón</option>
+            <option value="Amarillo claro">Amarillo claro</option>
+            <option value="Chocolate">Chocolate</option>
+            <option value="Verde">Verde</option>
+            <option value="Naranja">Naranja</option>
+            <option value="Morado">Morado</option>
+            <option value="Blanco">Blanco</option>
+            <option value="Amarillo">Amarillo</option>
+        </select>
+
+        <!-- Población -->
+        <label class="tooltip" for="poblacion">
+            Población
+            <span class="tooltiptext">
+                La población ayuda a identificar el hongo.
+                <img src="https://via.placeholder.com/50" alt="Población">
+            </span>
+        </label>
+        <select id="poblacion" name="poblacion">
+            <option value="Abundante">Abundante</option>
+            <option value="Agrupada">Agrupada</option>
+            <option value="Numerosa">Numerosa</option>
+            <option value="Dispersa">Dispersa</option>
+            <option value="Varia">Varia</option>
+            <option value="Solitaria">Solitaria</option>
+        </select>
+
+        <!-- Hábitat -->
+        <label class="tooltip" for="habitat">
+            Hábitat
+            <span class="tooltiptext">
+                El hábitat ayuda a identificar el hongo.
+                <img src="https://via.placeholder.com/50" alt="Hábitat">
+            </span>
+        </label>
+        <select id="habitat" name="habitat">
+            <option value="Hierbas">Hierbas</option>
+            <option value="Hojas">Hojas</option>
+            <option value="Praderas">Praderas</option>
+            <option value="Caminos">Caminos</option>
+            <option value="Urbano">Urbano</option>
+            <option value="Basura">Basura</option>
+            <option value="Bosques">Bosques</option>
+        </select>
+
+
+
+
+
+
+            <button type="button" onclick="enviarFormulario()">Obtener predicción</button>
+        </form>
+        <div class="result" id="result">  </div>
+
+
+        <!-- <script>
+            function enviarFormulario() {
+                // Simulamos que se obtiene un resultado después de hacer clic en el botón
+                var resultado = "¡Este hongo es venenoso!";
+        
+                // Insertamos el resultado en el div con id="result"
+                document.getElementById("result").innerHTML = `
+                    <h2>Resultado de la predicción:</h2>
+                    <p>${resultado}</p>
+                `;
+            }
+        </script> -->
+
+
+        <script>
+            function enviarFormulario() {
+                // Obtener los valores del formulario
+                var formData = new FormData(document.getElementById('hongoForm'));
+        
+                // Convertir FormData a un objeto JSON
+                var data = {};
+                formData.forEach((value, key) => {
+                    data[key] = value;
+                });
+        
+                // Enviar los datos al script Python (a través de un comando subprocess)
+                fetch('http://localhost:8080', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(result => {
+                    // Mostrar el resultado de la predicción
+                    document.getElementById('result').innerHTML = `
+                        <h2>Resultado de la predicción:</h2>
+                        <p>${result.prediction}</p>
+                    `;
+                })
+                .catch(error => console.error('Error:', error));
+            }
+        </script>
+
+
+    </div>
+</body>
+</html>
