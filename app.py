@@ -7,7 +7,7 @@ from sklearn.ensemble import RandomForestClassifier
 import os
 
 # Ruta al archivo CSV
-ruta = 'https://raw.githubusercontent.com/Martu076/analisis_hongos/main/hongos.csv'
+ruta = r'D:\mushrooms\hongos.csv'
 
 class RequestHandler(BaseHTTPRequestHandler):
 
@@ -130,3 +130,4 @@ server_address = ('', 8080)
 httpd = HTTPServer(server_address, RequestHandler)
 print("Servidor corriendo en http://localhost:8080")
 httpd.serve_forever()
+
