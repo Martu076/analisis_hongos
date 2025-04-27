@@ -7,7 +7,7 @@ from sklearn.ensemble import RandomForestClassifier
 import os
 
 # Ruta al archivo CSV
-ruta = r'D:\mushrooms\hongos.csv'
+ruta = 'https://raw.githubusercontent.com/Martu076/analisis_hongos/main/hongos.csv'
 
 class RequestHandler(BaseHTTPRequestHandler):
 
